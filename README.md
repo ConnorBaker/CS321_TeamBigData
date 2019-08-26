@@ -1,25 +1,25 @@
 ---
-title: "CS321 Team Big Data Proposal"
+title: CS321 Team Big Data Proposal
 author: [Connor Baker]
-date: 2019-08-25, Compiled on \today\ at \currenttime
-subject: "GMU Fall 2019 CS 321"
+date: Compiled on \today\ at \currenttime
+subject: GMU Fall 2019 CS 321
 keywords: [GMU, Fall, 2019, CS, 321]
-subtitle: "A group project proposal"
+subtitle: A group project proposal
 toc: true
 toc-own-page: true
-logo: "images/GMU-CS-BLUE.png"
+logo: images/GMU-CS-BLUE.png
 logo-width: 273 # Size at which the logo is centered
-lang: "en"
+lang: en
 titlepage: true
-titlepage-color: "FFFFFF"
-titlepage-text-color: "0d47a1"
-titlepage-rule-color: "0d47a1"
+titlepage-color: FFFFFF
+titlepage-text-color: 0d47a1
+titlepage-rule-color: 0d47a1
 titlepage-rule-height: 2
-papersize: "letter"
-fontsize: "10pt"
+papersize: letter
+fontsize: 10pt
 listings-disable-line-numbers: false
 footer-right: \thepage\ of \pageref{LastPage}
-header-right: "2019-08-25"
+header-right: \today
 header-includes:
   - \setcounter{page}{0} # So that the titlepage is the zeroth page
   - \usepackage{datetime}
@@ -31,17 +31,19 @@ header-includes:
 
 > You want to create something that people will use... Your product must have unique characteristics that set it apart from any competing products that are already in the market.
 
-*Scientia potentia est*: knowledge is power. It is those which control knowledge, information itself that are truly powerful.
+*Scientia potentia est*: knowledge is power.
 
-More so than at any point in the history of the world, information has become the market's scarcest resource. This claim seems to be paradoxically at odds with the near-ubiquity of information technology; indeed, never before have so many had the ability to gather so much information. However gathering information and gathering *pertinent* information are two very different things.
+More so than at any point in the history of the world, information has become the market's scarcest resource. This claim seems paradoxically at odds with the near-ubiquity of information technology; indeed, never before have so many had the ability to gather so much information. However gathering information and gathering *pertinent* information are two very different tasks. Increasingly, the companies that succeed in the free market are those that have the largest capacity to ingest pertinent information, enrich it, and analyze it to produce actionable information.
 
-A company which produces smartphones does not benefit from knowing the market price of laundry detergent. Likewise, a company which manufactures and sells laundry detergent would not benefit from having information about the specifications of the next generation of smartphones. However, both companies would benefit from knowing information about their competitors and the demographics of their markets. Increasingly, the companies that succeed in the free market are those that have the largest capacity to ingest pertinent information, enrich it, and analyze it to produce yet more information.
+Facebook and Google, the "F" and "G" of FANG, are two of the market's four best-performing tech stocks. Facebook and Google's primary sources of revenue comes from selling ads through their respective platforms. Part of why Facebook and Google have excelled where their competitors have stalled is their ability to acquire information about their users. With every post, click, or search, users of these platforms tell the monolithic companies behind them things about themselves. This information is sold to a third party or used by the company to increase the effectiveness of targeted advertisements.
 
-Facebook and Google, the "F" and "G" of FANG, are two of the market's four best-performing tech stocks. Facebook and Google's primary sources of revenue comes from selling ads through their respective platforms. Part of why Facebook and Google have excelled where their competitors have stalled is their ability to acquire information about their users. With every post, click, or search users of these platforms tell the monolithic companies behind own them their secrets. This in turn allows them to more effectively advertise toward these users.
-
-Information in and of itself has become a market of sorts. Numerous companies have sprung up in the information market, each purporting to deliver analytics packages to businesses which would perform some miracle like doubling their marketing reach or click-through rate. These offerings are particularly enticing to businesses without the fortune of controlling a platform which passively aggregates their target market's information.
+Information in and of itself has become a market. Numerous companies have sprung up in the information market, each purporting to deliver analytics packages to businesses which would perform miracles like doubling their marketing reach or tripling their click-through rate. These offerings are particularly enticing to businesses without the fortune of controlling a platform which passively aggregates their target market's information.
 
 It is these businesses that Team Big Data wants to serve.
+
+```{=latex}
+\newpage
+```
 
 # Proposal
 
@@ -49,7 +51,7 @@ It is these businesses that Team Big Data wants to serve.
 
 Team Big Data (TBD) seeks to fill a perceived gap in the market. Most companies lack a platform which passively aggregates information about their target market (à la Google and Facebook). These companies stand to benefit from analytics about the audiences they hope to reach with their advertisements.
 
-TBD's proposed product is an analytics package which performs sentiment analysis of some number of users tweets. The sentiment analysis of a user's tweet can be thought of as representing the user's emotional state (negative/neutral/positive) which can be used to further target advertisements.
+TBD proposes an analytics package which performs sentiment analysis of some number of users tweets. The sentiment analysis of a user's tweet is a group of numbers which can be thought of as representing the user's emotional state (negative/neutral/positive). Information about the user's emotional state can be used to more effectively target them with advertisements.
 
 TBD's proposed analytics package consists of three parts:
 
@@ -65,17 +67,21 @@ TBD's technology stack consists of three main components:
 + Elasticsearch
 + Kibana
 
-The following section breaks down the general setup and dependencies of each technology.
+The following section breaks the use of each technology.
+
+```{=latex}
+\newpage
+```
 
 ### NiFi
 
-![A portion of a NiFi flow taken from the Apache NiFi homepage, <https://nifi.apache.org/>.](images/NiFiFlowExample.png){ width=100% }
+![A portion of a NiFi Flow. Image taken from the Apache NiFi homepage (<https://nifi.apache.org/>).](images/NiFiFlowExample.png){ width=100% }
 
-Apache NiFi is a flow-based programming tool mean to automate the flow of data between systems.
+Apache NiFi is a flow-based programming tool meant to automate the flow of data between systems.
 
-The atom of the NiFi Flow is that of the Processor. A Processor performs some function, be it modifying the content that passes through it or simply redirecting it to a new destination. Processors in turn can be grouped together into Processor Groups. Processor Groups are typically used to isolate different functional portions of the Flow from one another.
+The atom of the NiFi Flow is that of the Processor. A Processor performs some function, be it modifying the content that passes through it or simply redirecting it to a new destination. Processors in turn can be grouped together into Processor Groups. Processor Groups are typically used to isolate functionally different portions of the Flow from one another.
 
-We selected NiFi for two main reasons:
+TBD selected NiFi for two main reasons:
 
 1. NiFi is open source (which makes security audits easy) and has a great deal of documentation, and
 2. NiFi provides an API one can use to write new processors (in Java) to add functionality.
@@ -86,51 +92,81 @@ The NiFi portion of TBD's technology stack takes care of three main tasks:
 2. Transforming and enriching data
 3. Ingesting data into a data store
 
-Each is described in more detail in the following subsections.
-
 #### Fetching data from the edge
 
 NiFi comes with a Processor which, when configured, is able to fetch data from Twitter as a JSON object.
 
 #### Transforming and enriching data
 
-The JSON object Twitter yields contains a great deal of data that is irrelevant to our needs. To avoid bloat in our data store due to maintaining information which is unneeded, we extract the relevant fields. This extraction is performed by `jq`, a tool like `sed` built for JSON (<https://stedolan.github.io/jq/>).
+The JSON object Twitter yields contains a great deal of data that is irrelevant to our needs. To avoid bloat in our data store due to maintaining information which is unneeded, we extract the relevant fields. This extraction is performed by `jq`, a `se` like tool built for JSON (<https://stedolan.github.io/jq/>).
 
-The body of the tweet is then transformed into a JSON object containing the results of the text's sentiment analysis. The sentiment analysis is performed by Vader Sentiment, a tool written in python (<https://github.com/cjhutto/vaderSentiment>).
+The body of the tweet is then transformed into a JSON object containing the results of the text's sentiment analysis. The sentiment analysis is performed by Vader Sentiment, a open source tool written in python (<https://github.com/cjhutto/vaderSentiment>).
 
 #### Ingesting data into a data store
 
-NiFi ships with the capability to ingest into some Elasticsearch index.
+NiFi ships with a Processor which provides the capability to ingest into Elasticsearch.
+
+```{=latex}
+\newpage
+```
 
 ### Elasticsearch
 
-![An example of interacting with Elasticsearch's RESTful API, taken from the Elasticsearch homepage, <https://www.elastic.co/products/elasticsearch>](images/ElasticsearchCurlExample.png){ width=100% }
+![An example of interacting with Elasticsearch's RESTful API. Image taken from the Elasticsearch homepage (<https://www.elastic.co/products/elasticsearch>)](images/ElasticsearchCurlExample.png){ width=100% }
 
-Elasticsearch is a fast, resilient, and distributed search and analytics engine. Elasticsearch uses a RESTful API and JSON, but also has clients for a number of different languages.
+Elasticsearch is a fast, resilient, and distributed search and analytics engine. Elasticsearch offers a RESTful API and both ingests and exports JSON so it can be used with nothing more than `curl`. However, Elasticsearch also provides clients for a number of languages.
 
-Elasticsearch was selected as the data store due to its performance and tight integration with its companion application, Kibana, which provides insight on the data stored with Elasticsearch.
+Elasticsearch was selected as the data store due to its incredible performance and tight integration with the open source visualization and analytics tool, Kibana.
+
+```{=latex}
+\newpage
+```
 
 ### Kibana
 
-![A Kibana dashboard taken from the Kibana homepage, <https://www.elastic.co/products/kibana>.](images/KibanaExample.png){ width=100% }
+![A Kibana dashboard. Image taken from the Kibana homepage (<https://www.elastic.co/products/kibana>).](images/KibanaExample.png){ width=100% }
 
-Kibana is made by the same company behind Elasticsearch and is billed as the "window" into Elasticsearch. Kibana comes with dozens of visualization templates, each of which can be expanded and built on.
+Kibana is made by the same company behind Elasticsearch and is billed as the "window" into Elasticsearch. Kibana comes with dozens of visualizations, each of which can be expanded and built on. Pairing Kibana and Elasticsearch yields a tightly integrated solution with best-in-class performance, maintainability, and ease of use.
 
-Kibana is built by the same company that makes Elasticsearch -- they are made to work together. Pairing the two of them yields best-in-class performance, maintainability, and ease of use.
+```{=latex}
+\newpage
+```
 
 ## Development Methodology
 
-To enable high-velocity development, TBD embraces the several techniques from Extreme Programming (XP) and the Scaled Agile Framework (SAFe).
+To enable high-velocity development, TBD embraces several techniques from Extreme Programming (XP) and the Scaled Agile Framework (SAFe).
 
-While SAFe is highly regarded, even the smallest configuration, Essential SAFe, requires a team about three times the size of TBD's. As such, rigorously following SAFe is impractical. However, by taking techniques from XP and customer-facing ceremonies from SAFe, TBD is able to reap the benefits of both.
+While the teachings and practices of SAFe are highly regarded by enterprise, even the smallest configuration, Essential SAFe, requires a team about three times the size of TBD's. As such, rigorously following SAFe is impractical. However, by taking several techniques from XP and most of the customer-facing ceremonies from SAFe, TBD is able to reap the benefits of both.
 
 ### Delivery Cadence
 
-The semester is 16 weeks long. For this reason, TBD proposes that each sprint lasts two weeks. Every two sprints is followed by a Planning Increment, the purpose of which is to allow TBD to meet with the customer (the Professors and TAs) to better synchronize with their needs.
+The semester is 16 weeks long. For this reason, TBD proposes that each sprint lasts two weeks, and an Iteration consist of two sprints. Furthermore, every second Iteration is to be followed by a Planning Increment.
+
+To ensure alignment with the needs of the customer, the semester would begin with a Planning Increment.
+
+#### Sprint
+
+A sprint consists of 10 days of scrum and two internal demos.
+
+#### Iteration Review
+
+Each sprint is followed by an Iteration Review. An Iteration Review is a team meet up in which each member gauges the progress made during the increment and performs backlog grooming to prepare for the next iteration.
+
+#### Iteration Retrospective
+
+Each Iteration Review is followed by an Iteration Retrospective. An Iteration Retrospective is a team meet during which members discuss the practices that they followed (or did not follow) and identify ways to improve. It is also an opportunity to discover consistent or uniform impediments. The goal of the Iteration Retrospective is to discover what within the team is working well, what is not, and actionable items that can be taken towards improvement.
+
+#### Planning Increment
+
+The purpose of the Planning Increment is to allow TBD to meet with the customer (the Professor and TAs) to better synchronize with their needs. The Planning Increment will begin with a demonstration of the minimum viable product (MVP) created over the previous two iterations. Following this, the team will share the user stories that they were able to finish, and briefly describe why they were unable to finish others. Afterwards, TBD works with the customer to define their vision and create a road map. From these, features and user stories are generated and put into TBD's backlog.
 
 ### Collaborative Tools
 
 TBD will use the following tools to enable collaboration.
+
+```{=latex}
+\newpage
+```
 
 #### Slack
 
@@ -138,11 +174,19 @@ Slack will serve as the development team's primary means of communication. Insta
 
 ![TBD's Slack.](images/Slack.png){ width=100% }
 
+```{=latex}
+\newpage
+```
+
 #### Trello
 
 Trello will be the team's agile workflow. There will be one board per sprint, each serving as our backlog and Kanban board.
 
 ![TBD's Iteration 1, Sprint 1 Trello Board.](images/TrelloBoard.png){ width=100% }
+
+```{=latex}
+\newpage
+```
 
 #### GitHub
 
