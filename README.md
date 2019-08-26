@@ -147,3 +147,5 @@ Trello will be the team's agile workflow. There will be one board per sprint, ea
 #### GitHub
 
 GitHub will serve as our revision control system (RCS). In addition to being an RCS, it will also serve as our document repository, thanks to its Wiki functionality.
+
+![TBD's GitHub Wiki page.](images/GitHub.png){ width=100% }
