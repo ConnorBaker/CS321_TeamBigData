@@ -80,7 +80,13 @@ We selected NiFi for two main reasons:
 1. NiFi is open source (which makes security audits easy) and has a great deal of documentation, and
 2. NiFi provides an API one can use to write new processors (in Java) to add functionality.
 
-The NiFi portion of the stack takes care of three main tasks:
+The NiFi portion of TBD's technology stack takes care of three main tasks:
+
+1. Fetching data from the edge
+2. Transforming and enriching data
+3. Ingesting data into a data store
+
+Each is described in more detail in the following subsections.
 
 #### Fetching data from the edge
 
@@ -94,7 +100,7 @@ The body of the tweet is then transformed into a JSON object containing the resu
 
 #### Ingesting data into a data store
 
-Elasticsearch is a first-class citizen in NiFi. As such, as there exists a Processor meant to allow ingestion into an Elasticsearch index.
+NiFi ships with the capability to ingest into some Elasticsearch index.
 
 ### Elasticsearch
 
@@ -110,24 +116,34 @@ Elasticsearch was selected as the data store due to its performance and tight in
 
 Kibana is made by the same company behind Elasticsearch and is billed as the "window" into Elasticsearch. Kibana comes with dozens of visualization templates, each of which can be expanded and built on.
 
-Since Kibana is built by the same company that makes Elasticsearch, pairing the two of them yields best-in-class performance, maintainability, and ease of use.
+Kibana is built by the same company that makes Elasticsearch -- they are made to work together. Pairing the two of them yields best-in-class performance, maintainability, and ease of use.
 
 ## Development Methodology
 
-To enable high-velocity development, TBD embraces the Scaled Agile Framework (SAFe).
+To enable high-velocity development, TBD embraces the several techniques from Extreme Programming (XP) and the Scaled Agile Framework (SAFe).
+
+While SAFe is highly regarded, even the smallest configuration, Essential SAFe, requires a team about three times the size of TBD's. As such, rigorously following SAFe is impractical. However, by taking techniques from XP and customer-facing ceremonies from SAFe, TBD is able to reap the benefits of both.
 
 ### Delivery Cadence
 
-The semester is 16 weeks long. For this reason, TBD proposes that each sprint lasts two weeks. Every two sprints is followed by a Planning Increment, during which TBD will meet with the customer (the Professors and TAs) to better synchronize with their needs.
+The semester is 16 weeks long. For this reason, TBD proposes that each sprint lasts two weeks. Every two sprints is followed by a Planning Increment, the purpose of which is to allow TBD to meet with the customer (the Professors and TAs) to better synchronize with their needs.
 
 ### Collaborative Tools
 
-TBD will use the following tools to enable collaboration and SAFe.
+TBD will use the following tools to enable collaboration.
 
 #### Slack
 
+Slack will serve as the development team's primary means of communication. Instant messaging and the ability to easily share screenshots helps with the rate at which problems can be identified, diagnosed, and solved with distributed teams.
 
+![TBD's Slack.](images/Slack.png){ width=100% }
 
 #### Trello
 
-#### Github
+Trello will be the team's agile workflow. There will be one board per sprint, each serving as our backlog and Kanban board.
+
+![TBD's Iteration 1, Sprint 1 Trello Board.](images/TrelloBoard.png){ width=100% }
+
+#### GitHub
+
+GitHub will serve as our revision control system (RCS). In addition to being an RCS, it will also serve as our document repository, thanks to its Wiki functionality.
