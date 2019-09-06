@@ -32,7 +32,7 @@ Team 3 consists of the following members:
 
 + Connor Baker (cbaker25@masonlive.gmu.edu)
 + Ziyan Guo (zguo3@masonlive.gmu.edu)
-+ ShinHyoung Oh
++ ShinHyoung Oh (soh26@masonlive.gmu.edu)
 + Ghousia Syed (gsyed2@masonlive.gmu.edu)
 
 As with most small teams, each member must perform multiple roles. The following roles have been assigned according to each member's familiarity with a topic.
@@ -118,6 +118,6 @@ Elasticsearch, Kibana, and NiFi are Commercial, Off-The-Shelf (COTS) tools which
 
 ## Collaborative Process
 
-TBD uses Scrum as the guiding collaborative process.
+TBD uses the Scaled Agile Framework's (SAFe) ScrumXP as the guiding collaborative process.
 
-Each Monday and Wednesday TBD's development team meet for a time-boxed five-minute standup.
+Each Monday and Wednesday TBD's development team meet for a time-boxed five-minute standup at 12:30pm.
