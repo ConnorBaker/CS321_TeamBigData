@@ -68,7 +68,13 @@ Each should be a few words followed by a longer description. Don’t list the to
 
 ### Fetch data from Twitter
 
-### Perform ETL in on data received from Twitter
+### Extract meaningful content from Twitter
+
+### Enrich content from Twitter with sentiment analysis
+
+### Load enriched content into a data store
+
+### Provide relevant analytics on the ingested information
 
 ### Load data into multiple data stores
 
