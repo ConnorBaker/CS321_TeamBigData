@@ -50,7 +50,7 @@ Requirements
 > Compile a comprehensive list of functional (with priorities and
 > approximate estimates) and non-functional requirements (with
 > measurable criteria).
-
+>
 > Document the changes made to the requirements identified previously.
 > Record any changes to priorities, levels of abstraction, etc. Also,
 > discuss how those changes could affect your initial estimates. (If
@@ -61,7 +61,7 @@ Requirements
 Functional Requirements
 -----------------------
 
-### Fetch data from Twitter 
+### Fetch data from Twitter
 
 Twitter is the main source of information that our analytics package
 draws from. As such, we need to be able to fetch data from Twitter.
@@ -122,7 +122,7 @@ analytics and visualizations.
 The time estimate is about two weeks due to our team's low velocity.
 This estimation was derived from prior experience.
 
-### Load enriched content into a data store 
+### Load enriched content into a data store
 
 Excluding streaming analytics, data must be at rest to be analyzed. As
 such, our pipeline must have the ability to load data into a data store.
@@ -133,22 +133,22 @@ such, our pipeline must have the ability to load data into a data store.
 
 + Enrich content from Twitter with sentiment analysis
 
-#### Priority 
+#### Priority
 
 This requirement has an extremely high priority as it enables analytics
 and visualizations.
 
-#### Estimate 
+#### Estimate
 
 The time estimate is about one week due to our team's low velocity. This
 estimation was derived from prior experience.
 
-### Load data into multiple data stores 
+### Load data into multiple data stores
 
 To avoid vendor-lock in and promote the health of the product, our
 pipeline should be able to ingest into several different data stores.
 
-#### Dependencies 
+#### Dependencies
 
 No dependencies. Priority This requirement has a medium priority as it
 only serves to prevent vendor lock-in.
@@ -158,12 +158,12 @@ only serves to prevent vendor lock-in.
 This requirement has a medium priority as it only serves to prevent
 vendor lock-in.
 
-#### Estimate 
+#### Estimate
 
 The time estimate is about one week due to our team's low velocity. This
 estimation was derived from prior experience.
 
-### Provide relevant analytics on the ingested information 
+### Provide relevant analytics on the ingested information
 
 The proposed package should provide meaningful analytics which analyze
 not only a user's emotional sentiment at a single instance in time but
@@ -175,30 +175,30 @@ also some arbitrary span of time.
 
 + Enrich content from Twitter with sentiment analysis
 
-#### Priority 
+#### Priority
 
 This requirement has an extremely high priority as it provides the
 analytics component of the TBD Analytics Package.
 
-#### Estimate 
+#### Estimate
 
 The time estimate is about two weeks due to our team's low velocity.
 This estimation was derived from prior experience
 
-Non-Functional Requirements (NFR) 
+Non-Functional Requirements (NFR)
 ----------------------------------
 
-### Scalable system 
+### Scalable system
 
 A scalable system is one which can run on many different threads on a
 single machine. A scalable system is a necessary for non-trivial
 big-data packages.
 
-#### Metric 
+#### Metric
 
 System has the capability to scale across multiple threads.
 
-### Distributed system 
+### Distributed system
 
 A distributed system is one which can run on many different machines. A
 distributed system is a necessary for non-trivial big-data packages: it
@@ -206,18 +206,18 @@ is not usually possible to "scale up" a machine (that is, make it more
 powerful), however, it is usually trivial to "scale out" an application
 to more machines.
 
-#### Metric 
+#### Metric
 
 System has the capability to scale across multiple machines.
 
-### Guaranteed Delivery 
+### Guaranteed Delivery
 
 The quality of an analytics package is dependent upon the quality of the
 data it analyzes. Guaranteed Delivery ensures that all the data that
 enters the pipeline is eventually ingested into a data store, removing
 the possibility that data is lost along the way.
 
-#### Metric 
+#### Metric
 
 Data Flow Pipeline provides Guaranteed Delivery.
 
@@ -296,12 +296,11 @@ Contributions
 =============
 
 > Include information about the following:
-
--   Who managed the work for this deliverable?
-
--   Individual Contributions (Briefly describe how the work was
-    allocated and list who worked on the different aspects of the
-    deliverable).
+>
+> + Who managed the work for this deliverable?
+> + Individual Contributions (Briefly describe how the work was
+>   allocated and list who worked on the different aspects of the
+>   deliverable).
 
 The System Overview and Requirements sections were taken verbatim from
 the first deliverable, which were two sections developed largely by
@@ -309,22 +308,5 @@ Connor Baker. Shin Hyoung Oh defined the System Architecture section,
 which was then reviewed and finalized by Connor Baker. The System
 Architecture Visualization section was also completed by Connor Baker
 since he is the team's subject matter expert of the architecture portion
-of the project. Ziyan Guo and Ghousia Syed's worked diligently on
+of the project. Ziyan Guo and Ghousia Syed worked on
 enablers to push the project forward.
-
-Meet with GTA
-=============
-
-> You have to meet with the GTA and discuss your team's progress with
-> respect to the setting up version control and the other tools that
-> will be used for implementation and testing, recording meeting
-> minutes, and plans for design and implementation. You will also review
-> your project's scope and discuss team dynamics.
-
-Nothing set up with version control yet.
-
-How do you test COTS?
-
-Recording meeting minutes within blackboard's wiki.
-
-Started implementation earlier.
